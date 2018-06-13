@@ -13,7 +13,7 @@ def getTeams():
 	result = []
 
 	try:
-		with open("WorldSeriesWinners.txt") as file:
+		with open("WorldSeriesWinners.txt", 'r') as file:
 			for team in file:
 				result.append(team.strip())
 	except:
