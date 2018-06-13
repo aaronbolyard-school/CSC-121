@@ -8,7 +8,7 @@ import math
 # How many numbers the user should enter.
 # This is specified by assignment, but in the future could be requested
 # from the user.
-COUNT = 20
+COUNT = 5
 
 def get_integer(prompt, filter=None):
 	"""
