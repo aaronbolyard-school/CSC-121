@@ -45,7 +45,7 @@ class Row:
 		self.itemDescription = line[START:STOP].strip()
 
 	def extractPrice(self, line):
-		START = 75
+		START = 77
 		STOP  = 80
 		try:
 			self.price = parseInteger(line, START, STOP) / 100
@@ -60,7 +60,7 @@ def main():
 			rows.append(Row(line))
 
 	print(str.format(
-		"{0:7} {1:20} {2:15} {3:6}",
+		"{0:7} {1:20} {2:15} {3:4}",
 		"ItemID",
 		"Buyer",
 		"Item Name",
@@ -72,7 +72,7 @@ def main():
 			row.itemID[0:3], str(row.itemID)[3:6],
 			row.customerName,
 			row.itemDescription,
-			str(format(row.price, ".2f").rjust(6, "0")))
+			str(format(row.price, ".2f").rjust(4, "0")))
 		print(line)
 
 	print()

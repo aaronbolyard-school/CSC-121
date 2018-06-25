@@ -64,18 +64,24 @@ def formatEmail(username):
 
 def main():
 	rows = Row.readRows("accounts.csv")
+	
+	header = str.format(
+		"{0:7} {1:10} {2:10} {3:12} {4}",
+		"ID", "FirstName", "LastName", "Username", "Email")
+	print(header)
 
-	print("StudentID LastName FirstName Username Email")
 	for row in rows:
 		username = formatUsername(row.firstName, row.lastName, row.studentID)
 		email = formatEmail(username)
 
-		print(
+		result = str.format(
+			"{0:7} {1:10} {2:10} {3:12} {4}",
 			str(row.studentID).rjust(7, "0"),
-			row.lastName,
 			row.firstName,
+			row.lastName,
 			username,
 			email)
+		print(result)
 
 if __name__ == "__main__":
 	main()

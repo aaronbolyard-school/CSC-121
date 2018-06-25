@@ -5,7 +5,7 @@
 
 import random
 
-COUNT = 50
+COUNT = 10
 
 def getNames(filename):
 	result = []
@@ -26,6 +26,8 @@ def main():
 	lastNames = getNames("X_LastNames.csv")
 
 	with open("accounts.csv", "w") as file:
+		file.write("Aaron,Bolyard,3209132\n") # Include me!
+
 		for i in range(COUNT):
 			firstName = firstNames[random.randrange(0, len(firstNames))]
 			lastName = lastNames[random.randrange(0, len(lastNames))]
