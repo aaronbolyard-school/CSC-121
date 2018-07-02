@@ -64,7 +64,10 @@ def formatEmail(username):
 
 def main():
 	rows = Row.readRows("accounts.csv")
-	
+
+	TITLE = "Student Login Information"
+	print(TITLE.center(80))
+
 	header = str.format(
 		"{0:7} {1:10} {2:10} {3:12} {4}",
 		"ID", "FirstName", "LastName", "Username", "Email")
